@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+
+<title>Congestive Heart Failure RR Interval Database</title>
+<link rel="stylesheet" href="/physionet-pds/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="https://physionet.org/pn/css/physionet.css" media="all"> <!--   -->
+<link rel="stylesheet" href="https://physionet.org/pn/print.css" type="text/css" media="print"><!--   -->
+<link rel="stylesheet" href="/physionet-pds/css/shop-item.css" type="text/css" media="print"><style type="text/css">
+#toc, #doi { margin-right: 1em; }#toc, #doi { background: #ecf3ff; border: solid 2px #222 }
+.sf-menu > li > a { background: #dfe9ff; }
+h1, h2, h3 { color: #222; background: #dfe9ff }</style>
+<!-- scripts from Rich Callogero, May 2016 -->
+
+
+<script src="/physionet-pds/js/jquery.js"></script>
+<script src="/physionet-pds/js/bootstrap.min.js"></script>
+<script src="/physionet-pds/js/list.js"></script>
+
+<!--<script src="https://physionet.org/pn/js/jquery-1.11.3.min.js"></script>-->
+<script src="https://physionet.org/pn/js/hoverIntent.js"></script>
+<script src="https://physionet.org/pn/js/superfish.min.js"></script>
+<!--<script src="https://physionet.org/pn/js/debug.js"></script>-->
+<script src="https://physionet.org/pn/js/accessible-superfish.js"></script>
+<script src="https://physionet.org/pn/js/physionet.js"></script>
+<!-- -->
+<!--<script type="text/javascript" src="https://physionet.org/pn/js/jquery.tableofcontents.min.js"></script>-->
+<script type="text/javascript">
+  var loc = window.location.pathname;
+  var dir = loc.substring(0, loc.lastIndexOf('/'));
+  dir = dir + '/';
+  dir = dir.slice(15, dir.length);
+  var S3BL_IGNORE_PATH = true;
+  var BUCKET_URL = 'https://physionet-pds.s3.amazonaws.com';
+  //var BUCKET_URL = 'https://s3.amazonaws.com/';
+  var S3B_ROOT_DIR = dir; //'PhysioBank/apnea-ecg/';
+  $(function(){
+    //$("#NavBar").load("/physionet-pds/PhysioBank/NavBar.html");
+    $("#Footer").load("/physionet-pds/PhysioBank/Footer.html");
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.sf-menu').superfish({ autoArrows: false });
+    if ($('h2').length) {
+      $('#tocwrapper').append('<ul id="toc"></ul>');
+      $('#toc').tableOfContents(null, { startLevel: 2 });
+    }});
+</script>
+<!--#if expr="$MATHCONFIG"-->
+<!-- <script type="text/javascript" src="/pn4/js/mathjax/MathJax.js?config=< ! - -#echo var="MATHCONFIG" - - >"></script>-->
+<!--#endif-->
+</head>
+
+<body>
+
+  <header class="banner">
+    <a class="hide" href="#content">Skip to content</a>
+    <div style="width: 100%; position: absolute; top: 0;  z-index: 1; background-color: #222; min-width: 700px; padding: 0;">
+      <div class="topmenu" style="float: left; padding: 0.5em 2em 0.5em 0.5em;">
+	<!--	  <ul class="sf-menu sf-shadow sf-arrows"  >--><!--< ! - - #include virtual="https://physionet.org/pn/menu.shtml" -  - > -->
+	<!--	  </ul>-->
+      </div> <div style="float: left; padding: 0.6em 0 0 10em; margin: 0;">
+  <a style="color:#9d9d9d;background: none !important;" href="/physionet-pds/index.html"><span class="glyphicon glyphicon-home"> Home</span></a>
+    </div>
+    <div style="float: right; padding: 0.6em 10em 0 0; margin: 0;">
+    <a style="color:#9d9d9d;background: none !important;" href="https://Physionet.org"><span class="glyphicon glyphicon-transfer"> Our Website</span></a>
+    </div>
+
+
+    <div class="pbanner"><!-- pbanner is set to display: none -->
+      from <b>PhysioNet</b>, the research resource for complex physiologic signals
+    </div>
+    <div  style="width: 100%; min-width: 700px; margin:  0 0 2.7em 0; background-color: transparent; padding: 0;">
+      <!-- provides space above h1 header, so it isn't hidden by banner -->
+      <div id="top"><!-- need nested div to link to top lands in right place --></div>      
+    </div>
+
+  </header>
+
+    <main><h1 style="margin-top: 1.75em; padding-top: .4em;">Congestive Heart Failure RR Interval Database</h1><nav id="tocwrapper" style="padding: 1.5em 0 0 0; float: right;"> <!-- id to position toc added by KP, 6 July 2015 -->
+        </nav>
+    <!--#include virtual="https://physionet.org/cgi-bin/doicheck?uri=${REQUEST_URI}&title=$TITLE"-->
+    <a id="content" ></a>
+    <article id="page"><!-- added by KP, 12 June 2015 -->
+
+
+<p>
+This database includes beat annotation files for 29 long-term ECG recordings of
+subjects aged 34 to 79, with congestive heart failure (NYHA classes I, II, and
+III).  Subjects included 8 men and 2 women; gender is not known for the
+remaining 21 subjects.  The original ECG recordings (not available) were
+digitized at 128 samples per second, and the beat annotations were obtained by
+automated analysis with manual review and correction.</p>
+
+<p>
+For additional data of this type, including digitized ECG signals, see
+the <a href="../chfdb/index.html">BIDMC Congestive Heart Failure Database</a>.</p>
+
+<p>
+We thank Rochelle Goldsmith, of Columbia-Presbyterian Medical Center, New York,
+for her generous contribution of these data to PhysioBank.</p>
+
+<h3>References</h3>
+
+<p>
+The following studies have made use of these data:</p>
+
+<ol>
+<li> Krum H, Bigger JT Jr, Goldsmith RL, Packer M.
+     <a href="http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T18-3YF4CDD-6T&_coverDate=02%2F28%2F1995&_alid=142748919&_rdoc=1&_fmt=&_orig=search&_qd=1&_cdi=4884&_sort=d&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=4c3a86292c2bf9df5bbdc24e1439f4f7" target="other">
+     Effect of long-term digoxin therapy on autonomic function in patients
+     with chronic heart failure.</a>
+     <i>J Am Coll Cardiol</i> 1995; <b>25</b>:289-294.</li>
+
+<li> Goldsmith RL, Bigger JT, Bloomfield DM, Krum H, Steinman RC,
+      Sackner-Bernstein J, Packer M.
+     <a href="http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T10-3RH63JF-11&_coverDate=10%2F15%2F1997&_alid=142751779&_rdoc=1&_fmt=&_orig=search&_qd=1&_cdi=4876&_sort=d&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=c7e6bda26af47336edf0ab72ced06109" target="other">
+     Long-term carvedilol therapy increases parasympathetic nervous system
+     activity in chronic congestive heart failure.</a>
+     <i>Am J Cardiol</i> 1997; <b>80</b>:1101-1104.</li>
+
+<li> Mietus JE, Peng C-K, Henry I, Goldsmith RL, Goldberger AL.
+     <a href="http://heart.bmj.com/cgi/content/abstract/88/4/378"
+     target="other">The pNNx files: re-examining a widely used heart rate
+     variability measure.</a>
+     <i>Heart</i> 2002; <b>88</b>:378-380.</li>
+</ol>
+<div class="row">
+                <div class="col-md-12">
+                  <div id="listing"></div>
+                </div>
+              </div>
+              <div id="Footer"></div><!-- Footer -->

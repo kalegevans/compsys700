@@ -1,0 +1,46 @@
+<!--#set var="TITLE" value="Congestive Heart Failure RR Interval Database"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+
+<p>
+This database includes beat annotation files for 29 long-term ECG recordings of
+subjects aged 34 to 79, with congestive heart failure (NYHA classes I, II, and
+III).  Subjects included 8 men and 2 women; gender is not known for the
+remaining 21 subjects.  The original ECG recordings (not available) were
+digitized at 128 samples per second, and the beat annotations were obtained by
+automated analysis with manual review and correction.</p>
+
+<p>
+For additional data of this type, including digitized ECG signals, see
+the <a href="../chfdb">BIDMC Congestive Heart Failure Database</a>.</p>
+
+<p>
+We thank Rochelle Goldsmith, of Columbia-Presbyterian Medical Center, New York,
+for her generous contribution of these data to PhysioBank.</p>
+
+<h3>References</h3>
+
+<p>
+The following studies have made use of these data:</p>
+
+<ol>
+<li> Krum H, Bigger JT Jr, Goldsmith RL, Packer M.
+     <a href="http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T18-3YF4CDD-6T&_coverDate=02%2F28%2F1995&_alid=142748919&_rdoc=1&_fmt=&_orig=search&_qd=1&_cdi=4884&_sort=d&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=4c3a86292c2bf9df5bbdc24e1439f4f7" target="other">
+     Effect of long-term digoxin therapy on autonomic function in patients
+     with chronic heart failure.</a>
+     <i>J Am Coll Cardiol</i> 1995; <b>25</b>:289-294.</li>
+
+<li> Goldsmith RL, Bigger JT, Bloomfield DM, Krum H, Steinman RC,
+      Sackner-Bernstein J, Packer M.
+     <a href="http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6T10-3RH63JF-11&_coverDate=10%2F15%2F1997&_alid=142751779&_rdoc=1&_fmt=&_orig=search&_qd=1&_cdi=4876&_sort=d&view=c&_acct=C000022659&_version=1&_urlVersion=0&_userid=501045&md5=c7e6bda26af47336edf0ab72ced06109" target="other">
+     Long-term carvedilol therapy increases parasympathetic nervous system
+     activity in chronic congestive heart failure.</a>
+     <i>Am J Cardiol</i> 1997; <b>80</b>:1101-1104.</li>
+
+<li> Mietus JE, Peng C-K, Henry I, Goldsmith RL, Goldberger AL.
+     <a href="http://heart.bmj.com/cgi/content/abstract/88/4/378"
+     target="other">The pNNx files: re-examining a widely used heart rate
+     variability measure.</a>
+     <i>Heart</i> 2002; <b>88</b>:378-380.</li>
+</ol>
