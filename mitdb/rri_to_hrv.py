@@ -1,25 +1,39 @@
 from hrv.classical import time_domain
+from hrv.classical import non_linear
 from hrv.utils import open_rri
 # uses hrv package and converts dict output to csv format
 import csv
 
+ # how to use: td specifies td analysis and nl specifies NL analysis.
+ # change it depending on which one you want output
+specifier = 'nl'
+
 for i in range(100, 235):
     filename_header = str(i)
     filename = filename_header + 'rri.txt'
+    classifier = ''
     try:
         rri = open_rri(filename)
     except:
         continue
 
-    td_results = time_domain(rri) # output is dict
-    output_csv_name = filename_header + 'hrv_td.csv'
+    if specifier == 'td':
+        results = time_domain(rri) # output is dict
+    elif specifier == 'nl':
+        results = non_linear(rri)
+        classifier = 'nl'
+    else:
+        print("Invalid argument!")
+
+
+    output_csv_name = filename_header + 'hrv_' + classifier + '.csv'
 
     with open(output_csv_name, 'wb') as f:  # Just use 'w' mode in 3.x
-        w = csv.DictWriter(f, td_results.keys())
+        w = csv.DictWriter(f, results.keys())
         w.writeheader()
-        w.writerow(td_results)
+        w.writerow(results)
     
     print(filename_header + ' rri file has been processed')
 
-""" print(td_results)
-print(type(td_results)) """
+""" print(results)
+print(type(results)) """
