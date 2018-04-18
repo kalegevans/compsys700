@@ -7,5 +7,5 @@ import os
 
 for i in range(800, 895):
     filename = str(i)
-    command = 'ann2rr -r ' + filename + ' -a dat >' + filename + 'rri.txt'
+    command = 'ann2rr -r ' + filename + ' -a atr >' + filename + 'rri.txt'
     os.system(command)
