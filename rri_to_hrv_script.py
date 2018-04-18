@@ -6,10 +6,13 @@ import csv
 
  # how to use: td specifies td analysis and nl specifies NL analysis.
  # change it depending on which one you want output
-specifier = 'nl'
+specifier = 'td'
 
-for i in range(100, 235):
-    filename_header = str(i)
+# this script is GENERAL purpose. you need to change some of these to match the filenames
+
+
+for i in range(1, 55): # change range
+    filename_header = 'nsr' + str(i).zfill(3) # change name possibly
     filename = filename_header + 'rri.txt'
     classifier = ''
     try:
@@ -21,12 +24,11 @@ for i in range(100, 235):
         results = time_domain(rri) # output is dict
     elif specifier == 'nl':
         results = non_linear(rri)
-        classifier = 'nl'
     else:
         print("Invalid argument!")
 
 
-    output_csv_name = filename_header + 'hrv_' + classifier + '.csv'
+    output_csv_name = filename_header + 'hrv_' + specifier + '.csv'
 
     with open(output_csv_name, 'wb') as f:  # Just use 'w' mode in 3.x
         w = csv.DictWriter(f, results.keys())
