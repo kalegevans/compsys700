@@ -1,2 +1,0 @@
--r cu09
--p http://<!--#echo var="SERVER_NAME" --><!--#echo var="DOCUMENT_URI" -->
