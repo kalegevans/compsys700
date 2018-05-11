@@ -1,0 +1,46 @@
+<!--#set var="TITLE" value="The MIT-BIH Malignant Ventricular Arrhythmia Database"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+<div class="notice">
+<p>
+This database is described in</p>
+
+<div class="reference">
+Greenwald SD. Development and analysis of a ventricular fibrillation
+detector. M.S. thesis, MIT Dept. of Electrical Engineering and
+Computer Science, 1986.
+</div> <!-- end reference -->
+<p>
+<b>Please cite this publication when referencing this material, and also
+include the standard citation for PhysioNet:</b></p>
+<div class="reference">
+Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG,
+Mietus JE, Moody GB, Peng C-K, Stanley HE.  PhysioBank, PhysioToolkit, and
+PhysioNet: Components of a New Research Resource for Complex Physiologic
+Signals.
+<i>Circulation</i> <b>101</b>(23):e215-e220 [Circulation Electronic Pages;
+<a href="http://circ.ahajournals.org/content/101/23/e215.full"
+target="other">http://circ.ahajournals.org/content/101/23/e215.full</a>];
+2000 (June 13).
+</div> <!-- end reference -->
+</div>
+
+<div class="outer2"><div class="inner2">
+<img src="/physiobank/charts/vfdb.png" alt="sample waveforms" style="width: 497px;">
+</div></div>
+
+<p>
+This database includes 22 half-hour ECG recordings of subjects who experienced
+episodes of sustained ventricular tachycardia, ventricular flutter, and
+ventricular fibrillation.  The reference annotation (<tt>.atr</tt>) files
+contain only rhythm labels (no beat labels);  see this 
+<a href="annotations.shtml">note</a> for a key.</p>
+
+<h3>Further reading</h3>
+
+<div class="reference">
+<p>Greenwald SD, Albrecht P, Moody GB, Mark RG.
+Estimating confidence limits for arrhythmia detector performance.
+<i>Computers in Cardiology 1985</i>; <b>12</b>:383&ndash;386.</p>
+</div> <!-- end reference -->

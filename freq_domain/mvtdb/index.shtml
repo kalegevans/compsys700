@@ -1,0 +1,344 @@
+<!--#set var="TITLE" value="Spontaneous Ventricular Tachyarrythmia Database"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+<h2>Medtronic Version 1.0</h2>
+
+<div class="notice">
+<p>
+This database was contributed to PhysioNet by Medtronic, Inc., for use
+by researchers to study precursors and possible predictors of
+spontaneous ventricular tachyarrhythmias.  The original
+description was prepared by Ann M. Pearson and Walter H. Olson of
+Medtronic; it has been edited for presentation here.</p>
+
+<p>
+To facilitate comparisons in the literature, please do not alter this
+database or the rhythm classifications.</p>
+
+<p>
+When referencing this database, please refer to it as the "Spontaneous
+Ventricular Tachyarrhythmia Database Version 1.0 from Medtronic, Inc."
+and cite its URL (http://physionet.org/physiobank/database/mvtdb/).
+<b>Please also include the standard citation for PhysioNet:</b></p>
+
+<div class="reference">
+Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG,
+Mietus JE, Moody GB, Peng C-K, Stanley HE.  PhysioBank, PhysioToolkit, and
+PhysioNet: Components of a New Research Resource for Complex Physiologic
+Signals.
+<i>Circulation</i> <b>101</b>(23):e215-e220 [Circulation Electronic Pages;
+
+<a href="http://circ.ahajournals.org/content/101/23/e215.full"
+target="other">http://circ.ahajournals.org/content/101/23/e215.full</a>];
+2000 (June 13).
+</div> <!-- end reference -->
+
+<h3>Disclaimer</h3
+
+<p>
+If errors are discovered, please inform us so we can investigate and
+communicate them to other users of this database.  We have made our
+best effort to provide accurate data, but neither we nor Medtronic,
+Inc. are liable for the consequences of possible errors or omissions
+in these data.  The user assumes all such responsibility for the use
+of these data.</p>
+</div>
+
+
+<h2>Introduction</h2>
+<p>
+This database contains 135 pairs of RR interval time series, recorded by
+implanted cardioverter defibrillators (Medtronic Jewel
+Plus<sup><small>TM</small></sup> ICD 7218) in 78 subjects.  Each
+series contains between 986 and 1022 RR intervals.  One series of each
+pair includes a spontaneous episode of ventricular tachycardia (VT)
+or ventricular fibrillation (VF), and the other is a sample of the
+intrinsic (usually sinus) rhythm.</p>
+
+<p>
+The ICD continuously digitizes and analyzes the patient's
+electrogram (EGM).  Four EGM signals are digitized:</p>
+
+<ul>
+<li>HVA - HVB (Can - Coil)</li>
+<li>P-/S-P+/S (Tip - Ring)</li>
+<li>HVA-P+/S (Can - Ring)</li>
+<li>P-/S - HVB (Tip - Coil)</li>
+</ul>
+
+<p>
+R-waves are detected in the EGM with an auto-adjusting sense
+amplifier.  The automatic threshold adjustment can affect measured
+cycle lengths if the sensed R wave crosses the decaying threshold at
+different levels.  RR interval measurements are always based on the
+P-/S-P+/S (Tip-Ring) EGM.  Each interval is classified depending on
+the programmed tachycardia and fibrillation detection intervals (TDI
+and FDI, respectively).</p>
+
+<p>
+The ICD maintains a buffer containing the 1024 most recently
+measured RR intervals.  When a tachyarrhythmia is detected, the ICD
+delivers programmed pacing, cardioversion, or defibrillation therapy
+and records a snapshot of the RR interval buffer, thus capturing the
+sequence of 1024 RR intervals that immediately precede the detected
+event (ending at the time when the ICD first detected the event,
+not at the termination of the event).  The stored intervals are
+truncated (not rounded) to a multiple of 10 ms (e.g., an interval of
+457 ms is recorded in the snapshot as 450 ms).  The most recent
+snapshot is stored in the ICD's memory until the patient
+returns for a checkup, at which time the ICD is interrogated using
+a Medtronic 9790 ICD programmer, the stored snapshot is downloaded,
+and the ICD may be reprogrammed as appropriate.</p>
+
+<p>
+In addition to the stored snapshot of the most recently detected
+event, a snapshot of the RR interval buffer is also obtained when the
+ICD is interrogated; such snapshots thus contain the most recent RR
+intervals, which can be used as baseline (control) data to compare
+with the detected events.  Varying numbers of the least recent
+intervals in these snapshots are lost during device interrogation, so
+these baseline sequences contain between 986 and 1022 intervals each.</p>
+
+<p>
+The snapshots downloaded from the ICDs also include a few seconds of
+the high-resolution EGM, as illustrated below; EGM segments are not
+available for the records in this database, however.</p>
+
+<p>
+Each RR interval sequence included in this database has a three-part file name
+of the form <i>ssss.ttn</i>, where <i>ssss</i> is a four-digit patient
+number, <i>tt</i> is either <b>vf</b>, <b>vt</b>, or <b>mr</b>, and <i>n</i>
+is a sequence number for each type of event.  The files as provided by
+Medtronic can be found in the <a href="RRdata1/">RRdata1</a> and
+<a href="mr">mr</a> directories.  They are in plain text format, and
+each contains a column of numbers, which are the RR intervals in milliseconds.
+In addition, a set of PhysioBank-compatible annotation and header files has
+been created from the text files;  these are in the <a href="data/">data</a>
+directory.  These have record names of the form <i>ssss_ttn</i>, where the
+components are as described above.</p>
+
+<table style="margin: 1em auto; width: 90%;">
+<tr><td><b>vf</b></td><td>intervals prior to detection of spontaneous VF</td></tr>
+<tr><td><b>vt</b></td><td>intervals prior to detection of spontaneous VT</td></tr>
+<tr><td><b>mr</b></td><td>intervals prior to ICD interrogation ("mr" = "most recent")</td></tr>
+</table>
+
+<p>
+Each <b>vf</b> and <b>vt</b> sequence has a matching <b>mr</b> (baseline)
+sequence designated by the same numerals in the sequence names.  For example,
+<b>8076.mr2</b> is the baseline sequence matching <b>8076.vt2</b>.  These
+matched pairs of RR interval sequences are referred to as <b>sequence pairs</b>
+below.</p>
+
+<p>
+Several patients had multiple VT or VF episodes.  The database was
+subdivided into 4 datasets:</p>
+
+<table style="margin: 1em auto; width: 90%;">
+<tr><td width="20%"><b>Dataset</b></td><td width="20%"><b>Sequence Pairs</b></td><td width="60%" align="center"><b>Description</b></td></tr>
+<tr><td><b>MRVT</b></td><td>58</td><td>the most recent VT sequence pair from each patient
+ who experienced at least one detected VT</td></tr>
+<tr><td><b>MRVF</b></td><td>25</td><td>the most recent VF sequence pair from each patient
+ who experienced at least one detected  VF</td></tr>
+<tr><td><b>MultiVT</b></td><td>48</td><td>all earlier VT sequence pairs</td></tr>
+<tr><td><b>MultiVF</b></td><td>&nbsp;4</td><td>all earlier VF sequence pairs</td></tr>
+</table>
+
+<p>
+Researchers should use care in combining these datasets to avoid bias
+due to any one patient with many sequence pairs.</p>
+
+<p>
+Six patients had both VT and VF episodes.  In five of these cases, the baseline
+sequence associated with the first VF has the suffix <b>mra</b>, to avoid
+conflicts with the baseline sequences associated with the first VT (with the
+standard suffix <b>mr1</b>).  The names of the files in the sequence pairs for
+these six patients are given in the table below:</p>
+
+
+<table style="margin: 1em auto; width: 90%;">
+<tr><td>VT sequence pairs</td><td>VF sequence pairs</td></tr>
+<tr><td>0030.vt1 0030.mr1</td><td>0030.vf1 0030.mra<br>
+                                  0030.vf2 0030.mr2</td></tr>
+
+<tr><td>0115.vt1 0115.mr1<br>
+        0115.vt2 0115.mr2</td><td>0115.vf1 0115.mra</td></tr>
+
+<tr><td>0209.vt1 0209.mr1</td><td>0209.vf1 0209.mra</td></tr>
+
+<tr><td>0216.vt1 0216.mr1</td><td>0216.vf1 0216.mra</td></tr>
+
+<tr><td>8010.vt1 8010.mr1<br>
+        8010.vt2 8010.mr2<br>
+        8010.vt3 8010.mr3</td><td>8010.vf1 8010.mra</td></tr>
+
+<tr><td>8013.vt2 8013.mr2</td><td>8013.vf1 8010.mr1</td></tr>
+</table>
+
+<h2>Data Collection</h2>
+
+<p>
+The episodes included in this database were recorded by Medtronic ICD
+7218 defibrillators, from patients without pacemakers in the US and Canada
+on or before 3 January 1997.  Episodes were retrieved from the implanted
+devices during the patients' scheduled follow-ups and during subsequent
+unscheduled visits.  Each episode was classified manually using the
+criteria listed in the next section.  The final database included all
+recorded episodes except for:</p>
+
+<ul>
+<li> spontaneous episodes that occurred immediately post-implant,
+     or between the initial and final interrogation during a follow-up
+<li> episodes for which the VT or VF EGM could not be compared with a
+     sinus rhythm EGM from the same source
+<li> VTs and VFs for which fewer than 1000 R-R intervals were recorded
+     (e.g., an episode occurring within a few minutes of another)
+<li> SVTs that were inappropriately detected as VT or VF.
+</ul>
+
+<p>
+In all, 142 patients were studied, and this database contains
+135 episodes from 78 patients who experienced at least one VT or VF
+episode.  Five patients had both a VT and a VF episode included here.</p>
+
+<p>
+An accompanying Excel spreadsheet (<a href="phys.xls">phys.xls</a>) contains
+the following information for each sequence pair in the database:</p>
+
+<ul>
+<li> file name for the VT or VF sequence
+<li> file name for the MR sequence
+<li> date and time of the VT or VF episode
+<li> ICD's classification of the episode
+<li> manual classification of the episode
+<li> prestorage (on/off) [?]
+<li> EGM source
+<li> comments
+<li> patient history
+     <ul>
+     <li> sex
+     <li> height
+     <li> weight
+     <li> age
+     <li> cardiac history
+     <li> cardiac surgery (if applicable)
+     <li> arrhythmia history
+     <li> date of implant for the ICD 7218
+     <li> when a previous brady or tachy device was explanted (if applicable)
+     <li> ejection fraction
+     <li> antiarrhythmic medication taken at the time of each episode
+     <li> NYHA classification
+     </ul>
+</ul>
+
+<p>The letter "A" was used in the cells of the spreadsheet to indicate
+missing data.</p>
+
+<h2>Rhythm Classification Criteria</h2>
+
+<p>
+For each sequence pair, the detected episode was classified as VT, VF
+or SVT by comparing the its associated electrogram with that of the
+(presumed) sinus rhythm (SR) electrogram.  Five morphologic
+characteristics (shape, components crossing the baseline, initial
+slope, largest component, and notching) were used to classify the
+detected episodes; if any of these differed between the detected
+episode's EGM and the paired SR EGM, the episode was classified as a
+VT or VF.  If the two EGMs were similar in all five characteristics,
+but the detected rhythm slowed after anti-tachycardia pacing (ATP)
+therapy, with an increase in R-R intervals of at least 60 ms, the
+detection was considered appropriate.  If all characteristics were
+similar, but the ICD delivered a shock, the episode was classified as
+an SVT.</p>
+
+<p>
+The morphologic characteristics are illustrated below.</p>
+
+
+<p><b>Shape</b>: 
+Successive beats in the EGM may be similar, differing, or
+in multiple sets of similar beats.</p>
+
+<table style="margin: 1em auto; width: 80%;">
+<tr><td width="40%">
+<i><b>Monomorphic</b>, </i>same basic shape from beat-to-beat</td><td>
+<a href="images/SV_html_m29c28ec0.png"><img src="images/monomorphic.png"></a></td></tr>
+<tr><td>
+<i><b>Polymorphic</b>, </i>the episode has many different shapes</td><td>
+<a href="images/SV_html_m7a70514d.png"><img src="images/polymorphic.png"></a></td></tr>
+<tr><td>
+<i><b>Multimorphic</b>, </i>the episode has at least two distinct morphologies
+that may or may not be similar to SR</td><td>
+<a href="images/SV_html_m7a70514d.png"><img src="images/multimorphic.png"></a></td></tr>
+</table>
+
+<p><b>Number of components that cross the baseline</b>:
+Each component must be at least 10% of the peak-to-peak amplitude.</p>
+
+<table style="margin: 1em auto; width: 80%;">
+<tr><td width="40%">One component</td><td>
+<a href="images/SV_html_m17a7006c.png"><img src="images/one-comp.png"></a></td></tr>
+<tr><td width="40%">Two components</td><td>
+<a href="images/SV_html_m17a7006c.png"><img src="images/two-comp.png"></a></td></tr>
+<tr><td width="40%">Three components</td><td>
+<a href="images/SV_html_m17a7006c.png"><img src="images/three-comp.png"></a></td></tr>
+</table>
+</center>
+
+<p>The <b>Initial slope</b> may be positive or negative.
+
+<table style="margin: 1em auto; width: 80%;">
+<tr><td width="40%">First component positive</td><td>
+<a href="images/SV_html_m65f87b46.png"><img src="images/pos-slope.png"></a></td></tr>
+<tr><td width="40%">First component negative</td><td>
+<a href="images/SV_html_m65f87b46.png"><img src="images/neg-slope.png"></a></td></tr>
+</table>
+</center>
+
+<p><b>Position of the largest component</b>:  The largest component may
+be first, second, third, etc.  In the example below, at left the second
+component is largest; at right, the first is largest.</p>
+
+<p style="margin: 1em auto; width: 80%; text-align: center;">
+<a href="images/SV_html_52410684.png"><img src="images/largest-comp.png"></a>
+</p>
+
+<p><b>Notching</b>:  A component (defined as a portion of the signal
+that does not cross the baseline) may contain a notch.  In the example
+below, the waveforms have a notch in the second component.</p>
+
+<p style="margin: 1em auto; width: 80%; text-align: center;">
+<a href="images/SV_html_52410684.png"><img src="images/notch.png"></a></center>
+</p>
+
+<h2>Description of the Excel Files</h2>
+
+<p>
+In Excel (version 5.0), all VT / VF episodes and the Most Recent
+interval files were saved in a text format and are located in column
+A.  Each VT/VF episode file contain a total of 1024 cells of the R-R
+intervals.  As you look at the episode files in Excel, the last cell
+in the spreadsheet for the detected episodes, are the intervals just
+prior to detection.  For example, in episode file 0003.vt5, the last
+interval prior to detection is 390 ms which would be found in column
+A, cell number 1024.  The detected episodes are stored only until the
+initial detection by the ICD (not episode termination).  The Most
+Recent interval files have less than 1024 intervals (range from
+986-1022).  The least recent intervals are lost during the
+interrogation process and the number of intervals lost is
+variable.</p>
+
+<h2>Reference</h2>
+
+<p>
+<div class="reference">
+Swarna US, Callans DJ, Schwartzman D, Gottlieb CD, Marchlinski, FE.
+The value of right ventricular endocardial electrogram recordings in
+discriminating different morphologies of ventricular tachycardia.
+Address for copies: David Schwatzman, MD, Philadelphia Heart
+Institute, Philadelphia, PA 19104.
+</div> <!-- end reference -->
+</p>
+
+<!--#include virtual="/dir-footer.shtml"-->

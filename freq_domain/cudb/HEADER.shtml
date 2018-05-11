@@ -1,0 +1,87 @@
+<!--#set var="TITLE" value="Creighton University Ventricular Tachyarrhythmia Database"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+<div class="notice">
+<p>
+This database is described in</p>
+<div class="reference">
+Nolle FM, Badura FK, Catlett JM, Bowser RW, Sketch MH.
+CREI-GARD, a new concept in computerized arrhythmia monitoring systems.
+<i>Computers in Cardiology</i> <b>13</b>:515-518 (1986).
+</div> <!-- end reference -->
+<p>
+<b>Please cite this publication when referencing this material, and also
+include the standard citation for PhysioNet:</b></p>
+<div class="reference">
+Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG,
+Mietus JE, Moody GB, Peng C-K, Stanley HE.  PhysioBank, PhysioToolkit, and
+PhysioNet: Components of a New Research Resource for Complex Physiologic
+Signals.
+<i>Circulation</i> <b>101</b>(23):e215-e220 [Circulation Electronic Pages;
+<a href="http://circ.ahajournals.org/content/101/23/e215.full"
+target="other">http://circ.ahajournals.org/content/101/23/e215.full</a>];
+2000 (June 13).
+</div> <!-- end reference -->
+</div>
+
+<div class="outer2"><div class="inner2">
+<img src="/physiobank/charts/cudb.png" alt="[sample ecg recording]" style="width: 500px;">
+</div></div>
+
+<p>
+This database includes 35 eight-minute ECG recordings of human subjects who
+experienced episodes of sustained ventricular tachycardia, ventricular flutter,
+and ventricular fibrillation.</p>
+
+<p>
+Record <tt>cu01</tt> was obtained from a long-term ECG (Holter) recording
+(played back at real time for digitization); the other records were digitized
+in real time from high-level (1 V/mV nominal) analog signals from patient
+monitors. All signals were passed through an active second-order Bessel
+low-pass filter with a cutoff of 70 Hz, and were digitized at 250 Hz with
+12-bit resolution over a 10 V range (10 mV nominal relative to the unamplified
+signals). Each record contains 127,232 samples (slightly less than 8.5
+minutes).</p>
+
+<p>
+In episodes of cardiac failure, fibrillation is almost always preceded by a run
+of ventricular tachycardia, which eventually gives way to the fibrillation
+itself. The onset of fibrillation is extremely difficult to pinpoint in many
+cases. Any clinically useful detector should respond to the runs of tachycardia
+preceding fibrillation, since medical intervention is needed at the earliest
+opportunity. Thus any detector responding to the premonitory tachycardia can
+exhibit a negative &ldquo;time to alarm&rdquo; compared to the onset of fibrillation as
+recorded in the reference annotation files. For this reason, the database is
+defined as a tachyarrhythmia database rather than a fibrillation database.</p>
+
+<p>
+In these records, the minimum number of non-VF beats prior to the onset of a VF
+episode is 61. The mean time interval from the beginning of the record to the
+onset of VF is 5:47 (with a standard deviation of 2:01). Five records
+(<tt>cu12</tt>, <tt>cu15</tt>, <tt>cu24</tt>, <tt>cu25</tt>, and <tt>cu32</tt>)
+were from paced patients (in some cases, pacing artifacts are not visible, and
+pacing is apparent only from the regularity of the rhythm). Repeated
+defibrillation attempts are visible in many records.</p>
+
+<p>
+The recordings were originally collected by Floyd M. Nolle at the Creighton
+University Cardiac Center.  High-quality recordings of these rhythms are
+extremely rare, and of great importance both for development and evaluation of
+VF detectors and for basic research on the dynamics of VF. We wish to thank
+Richard W. Bowser, formerly of the Creighton University Cardiac Center, for
+preserving these recordings, for making them available for distribution in this
+format, and for preparing the preceding notes on this database.</p>
+
+<p>
+The reference annotation files supplied for this database have been included to
+aid users in locating events of interest. They are in no sense definitive. All
+beats are labelled normal (although many are ectopic). VF onset annotations
+mark only the approximate beginnings of VF episodes.</p>
+
+<p>
+The reference annotation files for records cu01, cu03, and cu12 were updated
+in January 2006 to include previously missing ventricular fibrillation onset
+and end annotations (thanks to Janusz Irzyk for reporting these missing).  The
+previous versions of these three files remain available here for comparison
+(cu01.atr-, cu03.atr-, and cu12.atr-).</p>

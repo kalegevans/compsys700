@@ -1,0 +1,30 @@
+<!--#set var="TITLE" value="The MIT-BIH Normal Sinus Rhythm Database"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+<div class="notice">
+<p>
+<b>When referencing this material, please
+include the standard citation for PhysioNet:</b></p>
+<div class="reference">
+Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG,
+Mietus JE, Moody GB, Peng C-K, Stanley HE.  PhysioBank, PhysioToolkit, and
+PhysioNet: Components of a New Research Resource for Complex Physiologic
+Signals.
+<i>Circulation</i> <b>101</b>(23):e215-e220 [Circulation Electronic Pages;
+<a href="http://circ.ahajournals.org/content/101/23/e215.full"
+target="other">http://circ.ahajournals.org/content/101/23/e215.full</a>];
+2000 (June 13).
+</div> <!-- end reference -->
+</div>
+
+<div class="outer2"><div class="inner2">
+<img src="/physiobank/charts/nsrdb.png" alt="sample waveforms" style="width: 505px;">
+</div></div>
+
+<p>
+This database includes 18 long-term ECG recordings of subjects referred to
+the Arrhythmia Laboratory at Boston's Beth Israel Hospital (now the Beth
+Israel Deaconess Medical Center).  Subjects included in this database were
+found to have had no significant arrhythmias;  they include 5 men,
+aged 26 to 45, and 13 women, aged 20 to 50.</p>

@@ -1,0 +1,52 @@
+<!--#set var="TITLE" value="Normal Sinus Rhythm RR Interval Database"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+
+<p>
+This database includes beat annotation files for 54 long-term ECG recordings
+of subjects in normal sinus rhythm (30 men, aged 28.5 to 76, and 24 women,
+aged 58 to 73).  The original ECG recordings (not available) were digitized
+at 128 samples per second, and the beat annotations were obtained by automated
+analysis with manual review and correction.</p>
+
+<p>
+For additional data of this type, including digitized ECG signals, see
+the <a href="../nsrdb">MIT-BIH Normal Sinus Rhythm Database</a>.</p>
+
+<p>
+We thank Phyllis Stein, of Washington University School of Medicine, St. Louis;
+and Rochelle Goldsmith, of Columbia-Presbyterian Medical Center, New York, for
+their generous contributions of these data to PhysioBank.</p>
+
+<h3>References</h3>
+
+<p>
+The following studies have made use of these data:</p>
+
+<ol>
+<li> Goldsmith RL, Bigger JT, Steinman RC, <i>et al</i>.
+     Comparison of 24-hour parasympathetic activity in endurance-trained and
+     untrained young men.
+     <i>J Am Coll Cardiol</i> 1992; <b>20</b>:552-558.
+     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=1512332&dopt=Abstract" target="other">[Abstract]</a></li>
+
+<li> Bigger JT, Fleiss LF, Steinman RC, Rolnitzky LM, Schneider WJ, Stein PK.
+     <a href="http://circ.ahajournals.org/cgi/content/full/91/7/1936"
+     target="other">RR variability in healthy, middle-age persons compared with
+     patients with chronic coronary heart disease or recent acute myocardial
+     infarction.</a>
+     <i>Circulation</i> 1995; <b>91</b>:1936-1943.</li>
+
+<li> Stein PK, Ehsani AA, Domitrovich PP, Kleiger RE, Rottman JN.
+     The effect of exercise training on heart rate variability in healthy older
+     adults.
+     <i>Am Heart J</i> 1999; <b>138</b>:567-576.
+     <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=10467210&dopt=Abstract" target="other">[Abstract]</a></li>
+
+<li> Mietus JE, Peng C-K, Henry I, Goldsmith RL, Goldberger AL.
+     <a href="http://heart.bmj.com/cgi/content/abstract/88/4/378"
+     target="other">The pNNx files: re-examining a widely used heart rate
+     variability measure.</a>
+     <i>Heart</i> 2002; <b>88</b>:378-380.</li>
+</ol>

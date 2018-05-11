@@ -9,6 +9,7 @@ Our repository contains:
 4. `chf2db`, contains HRV metrics for congestive heart failure patients. This database gives us data already in RRI format, so conversion from ECG to RRI was not required. chfdb also exists but it is REALLY big so I didn't bother.
 5. `/machinelearning`, Code that classifies our dataset into various heart disease states using a supervised learning algorithm 
 6. `/smartphoneapp`, Code for an Android smartphone application that receives Bluetooth Low Energy heart rate data from a Polar H7 Belt
+7. `/vfdb`, ventricular fibrillation db.
 
 Popular datasets not included: nsrdb, chfdb (both are too large, combined is upwards of 1gb. May need to move off git)
 
@@ -21,20 +22,11 @@ The ratios of SD1/SD2 are also considered, and the method of obtaining these is 
 
 
 # TODO:
-Some datasets are currently broken upon conversion to HRV
-
-- Fix converting svdb ecg datasets to rri
-- With correct RRI text files, generate the HRV
+- See Trello
 
 # COMPSYS700: Setup
 
 The wfdb software package is required to run any python scripts that extract information from Physionet datasets. This is a standalone command line package, MATLAB package or Python package.
-
-For windows please use the script provided to get pip (Python). `python get-pip.py`
-Then run:
-```import pip
-pip.main(['install', 'wfdb'])
-pip.main(['install', 'plotly'])```
 
 To easily download the datasets provided in this repo for yourself, simply install
 `rsync` for downloading them all: use `rsync -Cavz physionet.org::nameOfDb /directory`, where nameOfDb substitutes the desired database and /directory is the absolute path of where you want to save it.
